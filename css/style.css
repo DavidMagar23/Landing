@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    user-select: none;
+}
+
+body {
+    font-family: Rubik;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction {
+    background-color: #fff;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.introduction > .heading {
+    text-align: center;
+    letter-spacing: 0.5rem;
+}
+
+.introduction > h1.heading::after {
+    animation: words 8s ease;
+    content: "Hello, I'm David Magar.";
+    transition: transform 1s ease-in;
+    transform: scale(2);
+}
+
+@keyframes words {
+    0% {
+        content: "Hello";
+    }
+
+    55% {
+        content: "I'm";
+    }
+
+    68% {
+        content: "David";
+    }
+
+    80% {
+        content: "Magar";
+    }
+
+    90% {
+        content: ".";
+    }
+}
+
+.introduction > h1 {
+    animation: rainbow 6s infinite ease 11s, fadeIn 8s ease;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 4px 4px 4px #000;
+    margin-bottom: 1rem;
+}
+
+.introduction > h2 {
+    font-size: 2.5rem;
+    animation: fadeIn2 11s;
+    color: #fff;
+    text-shadow: 4px 4px 8px #000;
+}
+
+.introduction > h2 > span {
+    font-size: 3.5rem;
+    color: #fff;
+    animation: rainbow 3s infinite ease 11s;
+}
+
+@keyframes fadeIn {
+    0% {
+        color: white;
+        opacity: 0;
+        transform: rotate(-20deg) scale(0.32);
+        text-shadow: 4px 8px 4px green;
+    }
+    40% {
+        opacity: 1;
+        transform: rotate(20deg) scale(0.52);
+        text-shadow: 4px 4px 8px red;
+    }
+    70% {
+        transform: rotate(-10deg) scale(0.61);
+        text-shadow: 8px 4px 4px yellow;
+    }
+    90% {
+        color: white;
+        transform: rotate(1deg) scale(0.8);
+        text-shadow: 8px 4px 8px blue;
+    }
+    100% { 
+        text-shadow: 4px 4px 4px #000;
+    }
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 4px 4px 8px #000;
+    }
+}
+
+.rainbow {
+    animation: rainbow 5s infinte;
+}
+
+@keyframes rainbow {
+    0% {
+        text-shadow: 4px 4px 4px #0000ff;
+        /* text-shadow: 4px 4px 4px #FFFF00; */
+    }
+    20% {
+        text-shadow: 4px 4px 4px rgb(238, 255, 6);
+        /* text-shadow: 4px 4px 4px #ddabe7; */
+    }
+    40% {
+        text-shadow: 4px 4px 4px #00ff00;
+        /* text-shadow: 4px 4px 4px #0000FF; */
+    }
+    60% {
+        text-shadow: 4px 4px 4px #ff0000;
+        /* text-shadow: 4px 4px 4px #00ffff; */
+    }
+    80% {
+        text-shadow: 4px 4px 4px #ae57e9;
+        /* text-shadow: 4px 4px 4px #FFFF00; */
+    }
+    100% {
+        text-shadow: 4px 4px 4px #0000ff;
+    }
+}
+
+.introduction2 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rainbow2 6s infinite ease 0s;
+}
+
+.introduction2 .heading::after {
+    font-size: 3.5rem;
+    animation: rainbow2 6s infinite ease 0s;
+    content: '';
+}
+
+@keyframes rainbow2 {
+    0% {
+        background-color: #000;
+        color: #fff;
+        content: "How are you doing?";
+    }
+    50% {
+        background-color: #fff;
+        color: #000;
+        content: "Hope it's all good";
+    }
+    100% {
+        background-color: #000;
+        color: #fff;
+        content: "How are you doing?";
+    }
+}
+
+.body1 {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body1 .container{
+    width: 100%;
+    position: relative;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/stars.jpg);
+}
+
+.body1 .container::after,
+.body1 .container::before {
+    position:absolute;
+    width: 100%;
+    content: '';
+}
+
+.body1 .container::after {
+    height: 20vh;
+    bottom: 0;
+    background: linear-gradient(#ffffff, #353037);
+    opacity: 0.2;
+}
+
+.body .container::before {
+    height: 20vh;
+    top:0;
+
+    background: linear-gradient(#353037, #ffffff);
+}
