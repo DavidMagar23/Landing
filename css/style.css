@@ -9,6 +9,8 @@
 
 body {
     font-family: Rubik;
+    background-size: 0;
+    content-visibility: auto;
 }
 
 .center {
@@ -192,9 +194,24 @@ body {
     width: 100%;
     position: relative;
     height: 80vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(../img/stars.jpg);
+    color: white;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    font-size: 1.25rem;
+    margin: 0 8rem;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.about::first-letter {
+    font-size: 4rem;
 }
 
 .body1 .container::after,
@@ -202,9 +219,10 @@ body {
     position:absolute;
     width: 100%;
     content: '';
+    left: 0;
 }
 
-.body1 .container::after {
+/* .body1 .container::after {
     height: 20vh;
     bottom: 0;
     background: linear-gradient(#ffffff, #353037);
@@ -214,6 +232,58 @@ body {
 .body .container::before {
     height: 20vh;
     top:0;
-
     background: linear-gradient(#353037, #ffffff);
+} */
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+    transition: all 1s ease;
 }
+
+.body .container span{
+    text-shadow: 6px 6px 6px darkred;
+    z-index: 99;
+    position: relative;
+}
+
+.body .container span.red {
+    font-size: 1.5rem;
+    color: red;
+    text-shadow: 6px 6px 6px #000;
+    font-weight: 600;
+}
+
+.click {
+    width: 100px;
+    height: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    visibility: hidden;
+    mix-blend-mode: multiply;
+    opacity: 0;
+}
+
+.pointerAnimation {
+    animation: pointer 3s ease-out;
+}
+
+@keyframes pointer {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        scale: 0;
+        opacity: 0;
+    }
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
