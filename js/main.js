@@ -12,19 +12,3 @@ body.addEventListener("click", (e) => {
     void clickImage.offsetWidth;
     clickImage.classList.add('pointerAnimation');
 })
-
-let about = document.querySelector('.about');
-let himalaya = document.querySelector('.stars');
-let reds = document.querySelectorAll('.red');
-about.addEventListener("mousemove", (e) => {
-    himalaya.style.filter = 'blur(6px)';
-    about.style.transform = `scale(1.1)`;
-    for (red of reds) {
-    }
-})
-about.addEventListener("mouseout", (e) => {
-    himalaya.style.filter = '';
-    about.style.transform = ``;
-    about.style.transform = ``;
-    for (red of reds) {    }
-})
