@@ -267,6 +267,8 @@ body {
     visibility: hidden;
     mix-blend-mode: multiply;
     opacity: 0;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .pointerAnimation {
